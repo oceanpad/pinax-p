@@ -1,0 +1,76 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}pinax-project-account{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+    <section class="jumbotron">
+        <div class="container">
+            {% include "_messages.html" %}
+            <h2>{% blocktrans %}Welcome to<br>haiyang zhao's blog{% endblocktrans %}</h2>
+            <p>
+                {% blocktrans %}
+                Hey there, I’m haiyang. I’m a web developer living in singapore.
+                I am a fan of technology, photography, and innovation. I’m also
+                interested in web development and programming. You can visit my
+                website with a click on the button above.
+                {% endblocktrans %}
+            </p>
+            {% if not user.is_authenticated %}
+            {% url "account_login" as login_url %}
+            {% url "account_signup" as signup_url %}
+            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            {% endif %}
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2 class="text-center">{% blocktrans %}Why I write this project?{% endblocktrans %}</h2>
+            <p class="lead">
+                {% blocktrans %}
+                <b>Me</b>, a software engineer working in singapore, I had worked in
+                 japan from 2013 to 2015, and I came singapore at jan 2016. I had
+                 super passion in software programming. Now I am working with play
+                 framework, scala, java, react etc. I love python, So I made this
+                 project use pinax, django and python to practice my python skills.
+                {% endblocktrans %}
+            </p>
+            <div class="feature-columns">
+                <div>
+                    <i class="fa fa-cubes fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>English learner</b>, Now learning English everyday. After came singapore 1 year, my english had
+                      become very better. I need Test IELTS, get 6.0 and go to NUS to read my master of computer.
+                    {% endblocktrans %}
+                </div>
+                <div>
+                    <i class="fa fa-puzzle-piece fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>Passion in software engineer</b>, Vimer, gitter. Never use IDE, Only use Atom and vim.
+                      Linux lover, like to answer stack overflow questions everyday. Deep in weibo, wechat, facebook.
+                      commit and push git everyday. Write blog everyday, posts almost technology posts.
+                    {% endblocktrans %}
+                </div>
+                <div>
+                    <i class="fa fa-tint fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>Japanese Speaker</b>, worked in japan for 2 years.
+                    {% endblocktrans %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="lead text-center">
+                {% blocktrans %}
+                Click <a href="http://oceanpad.github.io/">oceanpad.github.io</a>
+                to read my blog.
+                {% endblocktrans %}
+            </p>
+        </div>
+    </section>
+{% endblock %}
