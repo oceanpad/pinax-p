@@ -24,3 +24,8 @@ pip install -r requirements.txt
 ./manage.py loaddata sites
 ./manage.py runserver
 ```
+
+* if you want to access this server remotely, run use `0.0.0.0:8000` parameter:
+```
+./manage.py runserver 0.0.0.0:8000
+```
